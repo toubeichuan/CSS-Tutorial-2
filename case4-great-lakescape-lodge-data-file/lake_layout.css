@@ -1,0 +1,200 @@
+﻿@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   The Great Lakescape Lodge Layout Styles
+   Filename: lake_layout.css
+*/
+
+@font-face {
+	font-family: 'DobkinPlainFont';
+	src: url('DobkinPlain.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Basic Styles */
+
+/* Structural Styles */
+
+body {
+	display: grid;
+	grid-template-columns: 70% 24%;
+	grid-template-areas:
+		"header header"
+		"leftcol rightcol"
+		"footer footer";
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1020px;
+	min-width: 640px;
+	gap: 2%;
+	background-color: #F5F5F5;
+	color: #424242;
+}
+
+body>header {
+	grid-area: header;
+	background-color: #F5F5F5;
+	color: #424242;
+}
+
+body>header>img {
+	width: 100%;
+	display: block;
+	margin: 0;
+}
+
+body>section#leftcol {
+	grid-area: leftcol;
+	margin-right: 2%;
+	padding: 20px;
+	background-color: #F5F5F5;
+	color: #424242;
+}
+
+body>section#rightcol {
+	grid-area: rightcol;
+	margin-right: 1%;
+	padding: 10px;
+	word-wrap: break-word;
+	background-color: #d6d6d69b;
+	color: #424242;
+}
+
+footer {
+	grid-area: footer;
+	clear: both;
+	background-color: #F5F5F5;
+	color: #424242;
+}
+
+/* Header Navigation */
+
+header>nav {
+	font-size: 15px;
+	width: 100%;
+	justify-content: space-around;
+	align-items: stretch;
+	padding: 0;
+	border: 2px solid #ccc;
+	background-color: #48CFCB;
+	color: #FFFFFF;
+}
+
+header>nav>ul {
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header>nav>ul>li {
+	text-align: center;
+	margin: 0;
+	border: 1px solid #F5F5F5;
+	flex: 1 0 auto;
+	position: relative;
+}
+
+header>nav a {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	color: #FFFFFF;
+	text-decoration: none;
+	transition: background-color 0.3s;
+}
+
+header>nav a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Section Layout */
+
+section#leftcol aside,
+section#leftcol article {
+	background-color: rgba(168, 183, 178, 0.2);
+	width: 42%;
+	float: left;
+	padding-left: 10px;
+	margin: 2.5% 2.5% 20px;
+}
+
+section#leftcol h1,
+section#leftcol h2,
+section#rightcol h2 {
+	margin: 0;
+	padding: 5px;
+	font-family: "DobkinPlainFont", sans-serif;
+}
+
+section#leftcol h1 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+section#leftcol h2,
+section#rightcol h2 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+section#leftcol img {
+	width: 100%;
+	display: block;
+	margin: 0;
+}
+
+section#rightcol blockquote {
+	margin: 0;
+	width: 100%;
+	overflow-wrap: break-word;
+	font-style: italic;
+	background-color: rgba(168, 183, 178, 0.2);
+	font-size: 13px;
+	line-height: 1;
+	text-align: justify;
+	padding: 10px;
+}
+
+/* Box Sizing Reset */
+
+address,
+article,
+aside,
+blockquote,
+body,
+cite,
+div,
+dl,
+dt,
+dd,
+em,
+figcaption,
+figure,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+img,
+li,
+main,
+nav,
+ol,
+p,
+section,
+span,
+ul {
+	box-sizing: border-box;
+}
